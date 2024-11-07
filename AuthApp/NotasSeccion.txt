@@ -1,0 +1,43 @@
+clase 1: introducción de la previa aplicación que será utilizada en la sección de autorización para ver temas de login y registro de usuarios
+clase 2: acerca del funcionamiento o de cómo trabaja la autenticación, desde el frontend el usuario envia sus credenciales mediante un Http request hacia una API de algún backend, este valida estas credenciales y genera un token de autorizacion, el backen envía de vuelta al frontend un Http Response junto con el token de autorizacion, este será útil para futuras Http Requests con recursos protegidos, este token se guarda en el celular
+clase 3: configuracion del backend, creé un nuevo proyecto en firebase y en la seccion de autenticación le di un click en la opcion de autenticación via correo electrónico, luego dice que se pretende utilizar Firebase Auth REST API, en la pagina de documentacion estaremos trabajando con la seccion de regostro con email y contraseña y la seccion de inicio de sesion con email y contraseña, necesitaremos enviar un request de http hacia un Endpoint con un Request Body Payload que es el cuerpo con la información del request, luego recibimos un Response Payload, en el que viene el Token generado cuando el usuario se autentica de forma exitosa, tambien trabajaremos un poco en la aplicacion para que el usuario tenga la opcion de iniciar sesion o registrarse, se tiene que controlar la pantalla de inicio de sesion y la de registro
+clase 4: control de las pantallas de inicio de sesion y registro o login y signup, utilizando el metodo o funcion switchAuthModelHandler() que se utiliza dentro de la funcion submitHandler(credentials) que retorna  un custom o personalizado FlatButton
+return (
+    <View style={styles.AuthContent}>
+      <AuthForm
+        isLogin={isLogin}
+        onSubmit={submitHandler}
+        credentialsInvalid={credentialsInvalid}
+      />
+      <View style={styles.buttons}>
+        <FlatButton onPress={switchAuthModelHandler}>
+          {isLogin ? 'Crear un nuevo usuario' : 'Iniciar sesion'}
+        </FlatButton>
+      </View>
+    </View>
+  );
+  el FlatButton dentro de su propiedad onPress ejecuta la funcion switchAuthModelHandler para controlar la navegacion entre las diferentes pantallas utilizando el Hook: import { useNavigation } from "@react-navigation/native"; 
+  function switchAuthModelHandler() {
+    if (isLogin) {
+      navigation.replace('Registrarse');
+    } else {
+      navigation.replace('Iniciar Sesión');
+    }
+  }
+  utilizando el metodo .replace('nombre de la screen');
+  clase 6: enviando un request de autenticacion hacia el backend, creamos una carpeta util con un archivo auth.js en el que por medio de axios enviamos una peticion post hacia la url de firebase, en la cual se incluye el Web API Key del proyecto de firebase que podemos ver en settings dentro del proyecto en firebase, ademas enviamos a traves de los parametros de la función el email y password
+
+import axios from "axios";
+
+const API_KEY = 'AIzaSyDQFB3qB4CaeIGloBqUlcDPk7iAqUJS2Y0'
+
+async function createUser(email, password){
+    const response = await axios.post(
+        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + API_KEY,
+        {
+            email: email,
+            password: password,
+            returnSecureToken: true
+        }
+    );
+}
