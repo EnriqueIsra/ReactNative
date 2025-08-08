@@ -1,0 +1,24 @@
+// cuestionario 1
+Pregunta 1: What's one of the main roles of the built-in <View> component?
+R: Structure/Group other child components
+
+Pregunta 2: Can you use HTML elements (e.g. <div>, <p>, <input>) in React Native apps?
+R: No, React Native doesn't recognize these components - it doesn't know how to compile them on native views 
+
+Pregunta 3: What's the relation between React Native component styling and CSS (Cascading Style Sheets) for the Web?
+R: React Native styling is inspired bt CSS (comparable/similar property names and values). Whilst the exact property names and values you use don't always match the CSS alternative, the goal of RN is to get as close as possible
+
+Pregunta 4: Which of the following example style rules does NOT work in React Native?
+R: 'background-color': '#ccc'. This wont't work in React Native because 'background-color' is not a supported property name (even though it's technically valid JS code)
+
+Pregunta 5: Why would you use const styles = StyleSheet.create({}) instead of a regular JavaScript object (const styles = {})?
+R: Using a StyleSheet adds validation and potential performance improvements
+
+Pregunta 6: What's "Flexbox"?
+R: A concept/set of styling properties that allows you yo structure content (i.e create layouts)
+
+Pregunta 7: What's the default styling/ layout behavior of a <View> component?
+R: It uses Flexbox to organize its child components
+
+Pregunta 8: If a <View> has flexDirection: 'column' (which is the default) - what does alignItems: 'flex-end' do in that case?
+R: It positions all child elements at the end of the column - on the horizontal axis. alignItems positions elements along the cross axis. For flexDirection: 'column', the cross axis is the horizontal axis
