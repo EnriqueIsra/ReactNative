@@ -20,6 +20,8 @@ function GoalInput(props) {
     setEnteredGoalText("");
   }
 
+  console.log("Goalinput")
+
   return (
     <Modal visible={props.visible} animationType="fade">
       <View style={styles.inputContainer}>
