@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     // flex: 1,
     marginTop: 100,
     padding: 16,
-    backgroundColor: "#72063c",
+    backgroundColor: "#4e0329",
     marginHorizontal: 24,
     borderRadius: 8,
     // sombra para Android con elevation
