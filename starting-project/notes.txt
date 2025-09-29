@@ -7,3 +7,13 @@ sustituir fot the View, out of the imports
 quitar el bG
 colors={[moradp, yrlloe]}
 mas oscuro enSGS
+
+ImageBackground import and put after the linear
+folder images
+source={require('./assets/image')} resizeMode="cover"
+style={s.rS}
+imageStyle={s-bI}
+
+bI: {
+    opacity: 0.15
+}
