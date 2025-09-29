@@ -1,0 +1,9 @@
+expo install expo-linear-gradient
+
+import the linear in App.js
+
+sustituir fot the View, out of the imports
+
+quitar el bG
+colors={[moradp, yrlloe]}
+mas oscuro enSGS
