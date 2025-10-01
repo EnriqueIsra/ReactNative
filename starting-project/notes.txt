@@ -17,3 +17,27 @@ imageStyle={s-bI}
 bI: {
     opacity: 0.15
 }
+
+en GS.js
+title: {
+    fS: 24,
+    fW: 'bold',
+    color: yellow,
+    tAling: center,
+    borderW: 2,
+    bColor: yellow,
+    padding: 12
+}
+en el Text s=s.title
+
+en componets new file Title.js
+function Title() {
+ return el View 
+}
+ex d Title
+poner los imports
+quitar el texto y ponerlo en children y tambien en el argumento
+
+usarno en GS y dejar el titulo de antes 
+
+mover los estilos e importar sS a Title
