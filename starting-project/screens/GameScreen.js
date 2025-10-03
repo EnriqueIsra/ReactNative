@@ -26,11 +26,13 @@ function GameScreen({ userNumber, onGameOver }) {
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
 
   useEffect(() => {
-    if(currentGuess === userNumber) {
-        onGameOver()
-        console.log("Game Over, your number is: " + currentGuess + " - " + userNumber)
+    if (currentGuess === userNumber) {
+      onGameOver();
+      console.log(
+        "Game Over, your number is: " + currentGuess + " - " + userNumber
+      );
     }
-  }, [currentGuess, userNumber, onGameOver])
+  }, [currentGuess, userNumber, onGameOver]);
 
   function nextGuessHandler(direction) {
     // direction => 'lower', 'greater'
@@ -67,14 +69,18 @@ function GameScreen({ userNumber, onGameOver }) {
       <Title>Opponents Guess!</Title>
       <NumberContainer>{currentGuess}</NumberContainer>
       <Card>
-        <InstructionsText>Higer or Lower?</InstructionsText>
-        <View>
-          <PrimaryButton onPress={nextGuessHandler.bind(this, "lower")}>
-            -
-          </PrimaryButton>
-          <PrimaryButton onPress={nextGuessHandler.bind(this, "greater")}>
-            +
-          </PrimaryButton>
+        <InstructionsText style={styles.instructionsText}>Higer or Lower?</InstructionsText>
+        <View style={styles.buttonsContainer}>
+          <View style={styles.buttonContainer}>
+            <PrimaryButton onPress={nextGuessHandler.bind(this, "lower")}>
+              -
+            </PrimaryButton>
+          </View>
+          <View style={styles.buttonContainer}>
+            <PrimaryButton onPress={nextGuessHandler.bind(this, "greater")}>
+              +
+            </PrimaryButton>
+          </View>
         </View>
       </Card>
       <View>{/** LOG ROUNDS */}</View>
@@ -90,4 +96,13 @@ const styles = StyleSheet.create({
     padding: 24,
     paddingTop: 60,
   },
+  buttonsContainer: {
+    flexDirection: "row",
+  },
+  buttonContainer: {
+    flex: 1,
+  },
+  instructionsText: {
+    marginBottom: 12
+  }
 });
