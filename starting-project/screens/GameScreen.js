@@ -67,7 +67,7 @@ function GameScreen({ userNumber, onGameOver }) {
   console.log(currentGuess);
   return (
     <View style={styles.screen}>
-      <Title>Opponents Guess!</Title>
+      <Title>Opponents Guess</Title>
       <NumberContainer>{currentGuess}</NumberContainer>
       <Card>
         <InstructionsText style={styles.instructionsText}>Higer or Lower?</InstructionsText>
