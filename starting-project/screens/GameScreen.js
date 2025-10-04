@@ -5,7 +5,7 @@ import NumberContainer from "../components/game/NumberContainer";
 import PrimaryButton from "../components/ui/PrimaryButton";
 import Card from "../components/ui/Card";
 import InstructionsText from "../components/ui/InstructionsText";
-import {Ionicons} from "@expo/vector-icons"
+import { Ionicons } from "@expo/vector-icons";
 
 function generateRandomBetween(min, max, exclude) {
   const rndNum = Math.floor(Math.random() * (max - min)) + min;
@@ -34,6 +34,11 @@ function GameScreen({ userNumber, onGameOver }) {
       );
     }
   }, [currentGuess, userNumber, onGameOver]);
+
+  useEffect(() => {
+    minBoundary = 1;
+    maxBoundary = 1000;
+  }, []);
 
   function nextGuessHandler(direction) {
     // direction => 'lower', 'greater'
@@ -70,7 +75,9 @@ function GameScreen({ userNumber, onGameOver }) {
       <Title>Opponents Guess</Title>
       <NumberContainer>{currentGuess}</NumberContainer>
       <Card>
-        <InstructionsText style={styles.instructionsText}>Higer or Lower?</InstructionsText>
+        <InstructionsText style={styles.instructionsText}>
+          Higer or Lower?
+        </InstructionsText>
         <View style={styles.buttonsContainer}>
           <View style={styles.buttonContainer}>
             <PrimaryButton onPress={nextGuessHandler.bind(this, "lower")}>
@@ -104,6 +111,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   instructionsText: {
-    marginBottom: 12
-  }
+    marginBottom: 12,
+  },
 });
