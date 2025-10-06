@@ -16,7 +16,7 @@ Este repositorio refleja el progreso y aprendizaje en React Native, desde concep
     - El celular intenta adivinar el número ingresado.  
     - Se cuentan los **rounds** necesarios para acertar.  
     - Interfaz con **estilos aplicados** para una presentación simple y amigable.   
-    ![Texto alternativo](URL_o_ruta_de_la_imagen)
+      <img source="starting-project/assets/images/screenshots/start-game.jpeg" width=250 height=250>
 
 ---
 
