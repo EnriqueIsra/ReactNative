@@ -42,5 +42,5 @@ npm install
 ```bash
 npm start
 ```
-4. Escanea el código QR con la aplicación de Expo desde tu celular.
+4. Escanea el código QR con la aplicación de Expo desde tu celular.   
 No requiere setup especial. puedes ejecutar la app directamente con Expo Go en tu dispositivo móvil o en un emulador.
